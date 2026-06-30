@@ -1,10 +1,23 @@
-*
-!.gitignore
+
+#*
+#1_CleanIt/ARCHV_NO_ERRORS
+
+#1_CleanIt/funcs_archv.bat
+#!1_CleanIt/funcs_dir_archv.bat
+#!1_CleanIt/funcs_dir.bat
+#!1_CleanIt/funcs_msg.bat
+#!1_CleanIt/funcs.bat
+#!1_CleanIt/main_cleaner.bat
 
 
-!1_CleanIt/funcs_archv.bat
-!1_CleanIt/funcs_dir_archv.bat
-!1_CleanIt/funcs_dir.bat
-!1_CleanIt/funcs_msg.bat
-!1_CleanIt/funcs.bat
-!1_CleanIt/main_cleaner.bat
+#!3_ExtractIt/keyify.bat
+#!3_ExtractIt/main_extract.bat
+#!3_ExtractIt/README.txt
+#!3_ExtractIt/sort.bat
+
+#!keyify.bat
+#!3_ExtractIt/main_extract.bat
+#!3_ExtractIt/README.txt
+#!3_ExtractIt/sort.bat
+
+

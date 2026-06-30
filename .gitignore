@@ -9,5 +9,5 @@
 !1_CleanIt/funcs.bat
 !1_CleanIt/main_cleaner.bat
 
-1_CleanIt/ARCHV_NO_ERRORS
-
+./1_CleanIt/ARCHV_NO_ERRORS
+#1_CleanIt/WINDOW_OUTPUT_ARCHV_1_SCAN_STARTING.txt

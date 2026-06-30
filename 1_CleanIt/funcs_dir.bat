@@ -67,7 +67,7 @@ goto :eof
 	if !qty! equ 0 (
 		echo > "!no_err!"
 		echo > "%~3"
-		@ call "funcs.bat" :no_err_repo "%~1" "!param2!"
+		@ call "funcs_msg_exclm_srch.bat" :after_search_none_no_fix "%~1" "!param2!"
 
 	) else (
 		@ call "funcs_msg_list.bat" :after_list "%~1" "!param2!"
@@ -135,13 +135,13 @@ exit /b
 
 	if !titl_chng_err_qty! gtr 0 (
 
-		@ call "funcs.bat" :has_car_errs_msg "%~1" "!do_clean_errs!|!titl_chng_err_qty!"
+		@ call "funcs_msg_exclm_srch.bat" :after_search_has "%~1" "!do_clean_errs!|!titl_chng_err_qty!"
 
 	) else (
 		@ call "funcs.bat" :delete_errs "!do_clean_errs!"
 		echo > "!no_err!"
 
-		@ call "funcs.bat" :no_car_errs_msg "%~1" "!do_clean_errs!|!titl_chng_err_qty!"
+		@ call "funcs_msg_exclm_srch.bat" :after_search_none_post_fix "%~1" "!do_clean_errs!|!titl_chng_err_qty!"
 	)
 
 

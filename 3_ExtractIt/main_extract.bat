@@ -2,6 +2,7 @@ setlocal EnableDelayedExpansion
 
 
 @ set "src=APPLIED_ORIG"
+@ set "src=..\..\ARCHV_DIRTY"
 
 
 for /d %%i in ("%src%\*") do (

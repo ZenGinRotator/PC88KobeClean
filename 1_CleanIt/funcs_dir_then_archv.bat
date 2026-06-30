@@ -32,6 +32,8 @@ goto :eof
 @ set "no_err=!type!_NO_ERRORS"
 @ set "rnamed=!type!_RENAMED"
 @ set "dlm=!type!_LIST_MADE"
+
+@ rem assign T (true) / F (false)
 @ set "msg_test=F"
 
 @ set "param2=!no_err!|!do_clean_errs!|!dlm!"
@@ -71,7 +73,7 @@ if not exist "!no_err!" (
 	@ call "funcs.bat" :delete_errs "!do_clean_errs!"
 	
 
-	@ call "funcs.bat" :start_car_err_msg "!param1!" "!do_clean_errs!"
+	@ call "funcs_msg_exclm_srch.bat" :before_search "!param1!" "!do_clean_errs!"
 	pause
 	
 	if "!msg_test!" equ "F" (

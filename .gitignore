@@ -1,7 +1,8 @@
 
-#*
-#1_CleanIt/ARCHV_NO_ERRORS
+*
+#1_CleanIt/-KEEP_THIS-CLEANED_DIRS
 
+#1_CleanIt/!funcs_dir_then_archv.bat
 #1_CleanIt/funcs_archv.bat
 #!1_CleanIt/funcs_dir_archv.bat
 #!1_CleanIt/funcs_dir.bat

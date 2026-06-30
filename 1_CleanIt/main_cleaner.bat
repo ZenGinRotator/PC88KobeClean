@@ -39,7 +39,7 @@
 if exist "%dir_named%" (
 	@ set "mpd=ARCHV"
 )
-@ call "funcs_dir_archv.bat" :init "%mpd%" "%src%"
+@ call "funcs_dir_then_archv.bat" :init "%mpd%" "%src%"
 echo -- END OF main_clean.bat --
 pause
 

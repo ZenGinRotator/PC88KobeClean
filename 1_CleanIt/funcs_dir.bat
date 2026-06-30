@@ -70,7 +70,7 @@ goto :eof
 		@ call "funcs.bat" :no_err_repo "%~1" "!param2!"
 
 	) else (
-		@ call "funcs.bat" :list_made_msg "%~1" "!param2!"
+		@ call "funcs_msg_list.bat" :after_list "%~1" "!param2!"
 	)
 
 exit /b

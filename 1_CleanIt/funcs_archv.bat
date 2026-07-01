@@ -77,7 +77,7 @@ goto :eof
 		@ call "funcs_msg_exclm_srch.bat" :after_search_none_no_fix "%~1" "!param2!"
 
 	) else (
-		@ call "funcs.bat" :list_made_msg "%~1" "!param2!"
+		@ call "funcs_msg_list.bat" :after_list "%~1" "!param2!"
 	)
 exit /b
 
@@ -144,7 +144,7 @@ exit /b
 	)
 
 	if !qty! gtr 0 (
-		@ call "funcss_msg_exclm_srch.bat" :after_search_has "%~1" "!do_clean_errs!|!qty!"
+		@ call "funcs_msg_exclm_srch.bat" :after_search_has "%~1" "!do_clean_errs!|!qty!"
 	) else (
 		@ call "funcs.bat" :delete_errs "!do_clean_errs!"
 		echo > "!no_err!"

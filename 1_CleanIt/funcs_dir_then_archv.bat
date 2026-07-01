@@ -61,7 +61,7 @@ if not exist "!dlm!" (
 
 if exist "!rnamed!" (
 
-	@ call "funcs.bat" :end_rename_dir_msg "!param1!"
+	@ call "funcs_msg_rename.bat" :after_rename "!param1!"
 	pause
 	goto :eof
 )
@@ -92,7 +92,7 @@ if not exist "!no_err!" (
 )
 if exist "!no_err!" (
 	
-	@ call "funcs.bat" :start_rename_msg "!param1!"
+	@ call "funcs_msg_rename.bat" :before_rename "!param1!"
 	pause	
 
 
@@ -105,7 +105,7 @@ if exist "!no_err!" (
 	)
 	echo > "!rnamed!"
 
-	@ call "funcs.bat" :end_rename_dir_msg "!param1!"
+	@ call "funcs_msg_rename.bat" :after_rename "!param1!"
 	pause
 	
 

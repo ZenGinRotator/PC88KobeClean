@@ -86,6 +86,17 @@ pause
 exit /b
 
 
+:loop_extract
+
+for /d %%i in ("%~1\*") do (
+
+	for %%j in ("%%i\*") do (
+		@ call :overwrite_extract "%%j" "%%i"
+	)
+)
+exit /b
+
+
 :overwrite_extract
 	@ rem path to extract: "%~1"
 	@ rem output extracted to: "%~2"

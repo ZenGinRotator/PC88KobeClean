@@ -20,6 +20,9 @@
 @ set "src=APPLY_ON_ORIG"
 @ set "src=..\..\ARCHV_DIRTY"
 
+@ set "a_ren=ARCHV_RENAMED"
+@ set "unzip=ARCHV_UNZIPPED"
+
 @ set "is_dir=T"
 
 
@@ -31,7 +34,26 @@
 @ set "dir_named=DIR_RENAMED"
 @ set "dlm=DIR_LIST_MADE"
 @ set "msg_test=F"
-@ set "param2=%no_err%|%do_clean_errs%|%dlm%"
+@ rem set "param2=%no_err%|%do_clean_errs%|%dlm%"
+
+if exist "%a_ren%" (
+
+	@ rem NEED FLAG TO AVOID RE-EXTRACING 7Z
+	if exist "%unzip%" (
+		echo NEED MSG TO INDICATE ALREADY UNZIPPED
+		pause
+		goto :eof
+	)
+	@ call "funcs.bat" :loop_extract "%src%"
+	echo > "%unzip%"
+
+
+	
+
+	echo MESSAGE FOR FINISHING EXTRACTING 7Z
+	pause
+	@ goto :eof
+)
 
 
 @ set "mpd=DIR"
@@ -44,6 +66,3 @@ echo -- END OF main_clean.bat --
 pause
 
 goto :eof
-
-
-

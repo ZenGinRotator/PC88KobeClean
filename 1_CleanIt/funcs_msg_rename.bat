@@ -103,3 +103,9 @@ exit /b
 	echo !brk!!brk!!bar!!brk!!cong!!brk!!m1!!brk!!m2!!bar!!brk!!brk! > "!win_out!_!type!_6_RENAME_STOPPED.txt"
 
 exit /b
+
+
+:end_clean
+	@ set "t=You have finished cleaning all directories & files within the %~1 directory.!brk!"
+	echo "!brk!!brk!!bar!!t!!bar!!brk!!brk!"
+exit /b

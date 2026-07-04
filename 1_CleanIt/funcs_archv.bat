@@ -62,8 +62,8 @@ goto :eof
 
 			if not exist "%%j" (
 			
-				@ call "funcs.bat" :key_dir_write "%k_dirty%\!temp!" "%%~nj"
-				@ call "funcs.bat" :key_dir_write "%k_clean%\!temp!" "%%~nj"
+				@ call "funcs.bat" :key_dir_write "%k_dirty%\!temp!" "%%~nxj"
+				@ call "funcs.bat" :key_dir_write "%k_clean%\!temp!" "%%~nxj"
 				@ set /a qty+=1
 			)
 		)
@@ -127,8 +127,6 @@ exit /b
 
 	)
 
-	echo ECHO ----- "!src!"
-	rem pause
 	@ set /a qty=0
 	for /d %%i in ("!k_clean!\!k_src!\*") do (
 	
@@ -136,7 +134,7 @@ exit /b
 		
 		for %%j in ("%%i\*") do (
 
-			if not exist "!p!\%%~nxj.7z" (
+			if not exist "!p!\%%~nxj" (
 				@ set /a qty+=1
 				@ call "funcs.bat" :key_dir_write "!do_clean_errs!" "!k_clean!_%%~nxj"
 			)
@@ -187,7 +185,7 @@ exit /b
 
 	
 			@ set "revised=!o!!p!!q!"
-			@ ren "%~2\%%~nxi\%%~nxj.7z" "!revised!.7z"
+			@ ren "%~2\%%~nxi\%%~nxj" "!revised!"
 
 		)
 	)

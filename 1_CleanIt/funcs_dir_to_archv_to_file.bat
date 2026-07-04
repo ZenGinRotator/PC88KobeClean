@@ -80,6 +80,8 @@ if not exist "!no_err!" (
 		if "!type!" equ "DIR" (
 			@ call "funcs_dir.bat" :careted_errors "!param1!" "!param2!"
 		) else (
+
+			@ rem Use to find exclamation marks among archive (.7z) & rom-specific (.d88, .pdf, etc.) files
 			@ call "funcs_archv.bat" :careted_errors "!param1!" "!param2!"
 		)	
 	) else (

@@ -18,9 +18,10 @@
 @ rem set "kless_clean_dirs=KEYLESS_DIRS_CLEAN"
 
 @ set "src=APPLY_ON_ORIG"
-@ set "src=..\..\ARCHV_DIRTY"
+@ set "src=..\ARCHV_DIRTY"
 
 @ set "a_ren=ARCHV_RENAMED"
+@ set "f_renm=FILE_RENAMED"
 @ set "unzip=ARCHV_UNZIPPED"
 
 @ set "is_dir=T"
@@ -89,7 +90,9 @@ if exist "%a_ren%" (
 		@ pause
 		@ call "funcs_msg_unzip.bat" :after_extract "%src%"
 		@ goto :eof
-	) else (
+	)
+	
+	if exist "!f_renm!" (
 
 		@ call "funcs_msg_rename.bat" :end_clean "%src%"
 		PAUSE

@@ -97,6 +97,10 @@ exit /b
 	
 	@ set "cong=                      Congratulations^!^!^! :)                               !brk!"
 	@ set "m1=* Exclamation marks ^! in !targ! names belonging to the !src! directory have been successfully removed.!brk!"
+
+
+	@ rem Error: this prints after we removed all ! from file titles that were previously
+	@ REM .... extracted from their original .7z files (needs to be corrected)
 	@ set "m2=* Next, we will use this same script to gradually remove exclamation marks (^!) from the names of archived 7z files contained within each 'cleaned' directory name from the !src! directory.!brk!"
 
 	echo "!brk!!brk!!bar!!brk!!cong!!brk!!m1!!brk!!m2!!bar!!brk!!brk!"

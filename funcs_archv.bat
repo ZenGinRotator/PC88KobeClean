@@ -48,9 +48,9 @@ goto :eof
 		for %%j in ("%%i\*") do (
 		
 			
-			@ rem removing ..\..\ from path for src
-			@ rem need to include ..\..\ for path of src in :rename_ function
-			for /f "tokens=3 delims=\" %%k in ("%%j") do (
+			@ rem removing ..\ from path for src
+			@ rem need to include ..\ for path of src in :rename_ function
+			for /f "tokens=2 delims=\" %%k in ("%%j") do (
 				@ set "src=%%k"
 				
 			)
@@ -61,7 +61,7 @@ goto :eof
 			@ call "funcs.bat" :key_dir_write "%k_all%\!temp!" "%%~nj"
 
 			if not exist "%%j" (
-			
+				
 				@ call "funcs.bat" :key_dir_write "%k_dirty%\!temp!" "%%~nxj"
 				@ call "funcs.bat" :key_dir_write "%k_clean%\!temp!" "%%~nxj"
 				@ set /a qty+=1
@@ -121,20 +121,27 @@ exit /b
 		@ set "dlm=%%i"
 	)
 
-	@ rem remove ..\..\ from path for source
-	for /f "tokens=3 delims=\" %%i in ("!src!") do (
+	@ rem remove ..\ from path for source
+	for /f "tokens=2 delims=\" %%i in ("!src!") do (
 		@ set "k_src=%%i"
 
 	)
 
+
+	
 	@ set /a qty=0
 	for /d %%i in ("!k_clean!\!k_src!\*") do (
-	
+
 		@ set "p=!src!\%%~nxi"
-		
+		@ rem echo I "!p!"
+		@ rem echo SRC "!src!" KEYLESS SRC "!k_src!"
+		@ rem @ pause
+		@ rem @ goto :eof
 		for %%j in ("%%i\*") do (
 
 			if not exist "!p!\%%~nxj" (
+
+
 				@ set /a qty+=1
 				@ call "funcs.bat" :key_dir_write "!do_clean_errs!" "!k_clean!_%%~nxj"
 			)
@@ -156,9 +163,9 @@ exit /b
 :rename_
 @ set is_dir=
 	
-	@ rem remove ..\..\ from path for src
+	@ rem remove ..\ from path for src
 	@ set k_src=
-	for /f "tokens=3 delims=\" %%i in ("%~2") do (
+	for /f "tokens=2 delims=\" %%i in ("%~2") do (
 		@ set "k_src=%%i"
 		
 	)

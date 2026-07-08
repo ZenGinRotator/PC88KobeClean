@@ -98,10 +98,19 @@ exit /b
 	@ set "cong=                      Congratulations^!^!^! :)                               !brk!"
 	@ set "m1=* Exclamation marks ^! in !targ! names belonging to the !src! directory have been successfully removed.!brk!"
 
+	@ set "targ=archived .7z"
+	@ set "from=directory"
+	if "!type!" equ "ARCHV" (
+		@ set "targ=extracted"
+		@ set "from=archived .7z file"
+	)
 
-	@ rem Error: this prints after we removed all ! from file titles that were previously
-	@ REM .... extracted from their original .7z files (needs to be corrected)
-	@ set "m2=* Next, we will use this same script to gradually remove exclamation marks (^!) from the names of archived 7z files contained within each 'cleaned' directory name from the !src! directory.!brk!"
+	@ set "m2=* Next, we will use this same script to gradually remove exclamation marks (^!) from the names of !targ! files contained within each 'cleaned' !from! name from the !src! directory.!brk!"
+
+	if "!type!" equ "FILE" (
+		@ set "m2=You have finished cleaning all directories & files within the %~1 directory.!brk!"
+
+	)
 
 	echo "!brk!!brk!!bar!!brk!!cong!!brk!!m1!!brk!!m2!!bar!!brk!!brk!"
 	echo !brk!!brk!!bar!!brk!!cong!!brk!!m1!!brk!!m2!!bar!!brk!!brk! > "!win_out!_!type!_6_RENAME_STOPPED.txt"
